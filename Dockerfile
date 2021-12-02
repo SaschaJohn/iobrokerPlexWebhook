@@ -1,7 +1,5 @@
-FROM python:3.10.0
-RUN pip install Flask
-RUN useradd -ms /bin/bash admin
-USER admin
+FROM python:3.10-slim-buster
+RUN pip3 install --user --no-cache-dir Flask requests
 WORKDIR /app
 COPY app /app
 CMD ["python", "app.py"]
