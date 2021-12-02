@@ -1,0 +1,10 @@
+version: "3"
+services:
+  pihole:
+    container_name: plexIobroker
+    image: darkmessiah/iobrokerplexwebhook:latest
+    restart: always
+    ports:
+      - "12345:5000/tcp"
+    environment:
+      IOBROKER_STATE_URL: 'http://192.168.178.145:8087/set/0_userdata.0.plexEvent?value='

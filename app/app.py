@@ -3,6 +3,7 @@ import json
 import requests
 import sys
 
+iobrokerState = os.environ['IOBROKER_STATE_URL']
 app = Flask(__name__)
 
 @app.route('/')
@@ -13,7 +14,7 @@ def index():
 def plex():
   data = json.loads(request.form['payload'])
   print(data['event'], file=sys.stderr)
-  requests.get('http://192.168.178.145:8087/set/0_userdata.0.plexEvent?value='+data)
+  requests.get(iobrokerState+data)
   return data
 
 if __name__ == '__main__':
