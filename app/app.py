@@ -16,7 +16,7 @@ def plex():
   data = json.loads(request.form['payload'])
   print(data['event'], file=sys.stderr)
   print(iobrokerState, file=sys.stderr)
-  url=str(iobrokerState)+str(data) 
+  url=str(iobrokerState)+str(data['event']) 
   requests.get(url)
   return data
 
