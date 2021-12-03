@@ -5,6 +5,6 @@ services:
     image: iobrokerplexwebhook:0.0.1
     restart: always
     ports:
-      - "12345:5000/tcp"
+      - "5000:5000/tcp"
     environment:
-      IOBROKER_STATE_URL: 'http://192.168.178.145:8087/set/0_userdata.0.plexEvent?value='
+      IOBROKER_STATE_URL: "http://192.168.178.145:8087/set/0_userdata.0.plexEvent?value="

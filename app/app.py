@@ -15,7 +15,9 @@ def index():
 def plex():
   data = json.loads(request.form['payload'])
   print(data['event'], file=sys.stderr)
-  requests.get(iobrokerState+data)
+  print(iobrokerState, file=sys.stderr)
+  url=str(iobrokerState)+str(data) 
+  requests.get(url)
   return data
 
 if __name__ == '__main__':
