@@ -1,8 +1,8 @@
 version: "3"
 services:
-  pihole:
+  plex:
     container_name: plexIobroker
-    image: darkmessiah/iobrokerplexwebhook:latest
+    image: iobrokerplexwebhook:0.0.1
     restart: always
     ports:
       - "12345:5000/tcp"

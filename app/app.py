@@ -2,6 +2,7 @@ from flask import Flask,request,json
 import json
 import requests
 import sys
+import os
 
 iobrokerState = os.environ['IOBROKER_STATE_URL']
 app = Flask(__name__)
